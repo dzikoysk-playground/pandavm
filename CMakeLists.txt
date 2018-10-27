@@ -10,4 +10,6 @@ else()
     message(WARNING "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first")
 endif()
 
-add_executable(PandaVM src/main.c)
+set(SOURCE_FILES src/main.c)
+add_executable(PandaVM ${SOURCE_FILES})
+target_link_libraries(PandaVM ${CONAN_LIBS})
